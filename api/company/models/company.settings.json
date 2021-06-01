@@ -37,9 +37,7 @@
       "model": "file",
       "via": "related",
       "allowedTypes": [
-        "images",
-        "files",
-        "videos"
+        "images"
       ],
       "plugin": "upload",
       "required": false,
@@ -52,6 +50,12 @@
     "is_direct_employer": {
       "type": "boolean",
       "required": true
+    },
+    "employment_start_date": {
+      "type": "date"
+    },
+    "employment_end_date": {
+      "type": "date"
     }
   }
 }

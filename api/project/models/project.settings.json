@@ -24,7 +24,6 @@
       "via": "related",
       "allowedTypes": [
         "images",
-        "files",
         "videos"
       ],
       "plugin": "upload",
@@ -33,7 +32,7 @@
     },
     "isActive": {
       "type": "boolean",
-      "default": true,
+      "default": false,
       "required": true
     },
     "start_date": {
@@ -75,8 +74,8 @@
       ]
     },
     "technologies": {
-      "collection": "technology",
       "via": "projects",
+      "collection": "technology",
       "dominant": true
     }
   }
