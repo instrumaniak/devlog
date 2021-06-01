@@ -1,0 +1,58 @@
+{
+  "kind": "collectionType",
+  "collectionName": "technologies",
+  "info": {
+    "name": "Technology",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "logo": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "link": {
+      "type": "component",
+      "repeatable": true,
+      "component": "common.link"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "programming_language",
+        "cli_tool",
+        "gui_tool",
+        "application",
+        "library",
+        "framework",
+        "database",
+        "project_management",
+        "other"
+      ]
+    },
+    "projects": {
+      "via": "technologies",
+      "collection": "project"
+    }
+  }
+}

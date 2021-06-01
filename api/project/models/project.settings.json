@@ -1,0 +1,83 @@
+{
+  "kind": "collectionType",
+  "collectionName": "projects",
+  "info": {
+    "name": "Project",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "screenshot": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "isActive": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    },
+    "start_date": {
+      "type": "date"
+    },
+    "end_date": {
+      "type": "date"
+    },
+    "employer_company": {
+      "model": "company"
+    },
+    "client_companies": {
+      "via": "projects",
+      "collection": "company",
+      "dominant": true
+    },
+    "project_type": {
+      "type": "enumeration",
+      "enum": [
+        "personal",
+        "job_commercial",
+        "job_rnd"
+      ],
+      "default": "personal"
+    },
+    "project_link": {
+      "type": "component",
+      "repeatable": true,
+      "component": "common.link"
+    },
+    "project_size": {
+      "type": "enumeration",
+      "enum": [
+        "tiny",
+        "small",
+        "medium",
+        "large",
+        "huge"
+      ]
+    },
+    "technologies": {
+      "collection": "technology",
+      "via": "projects",
+      "dominant": true
+    }
+  }
+}
