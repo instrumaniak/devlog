@@ -1,0 +1,3 @@
+# DevLog
+
+A strapi application
