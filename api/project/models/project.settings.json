@@ -8,7 +8,7 @@
   "options": {
     "increments": true,
     "timestamps": true,
-    "draftAndPublish": true
+    "draftAndPublish": false
   },
   "pluginOptions": {},
   "attributes": {
@@ -41,14 +41,6 @@
     "end_date": {
       "type": "date"
     },
-    "employer_company": {
-      "model": "company"
-    },
-    "client_companies": {
-      "via": "projects",
-      "collection": "company",
-      "dominant": true
-    },
     "project_type": {
       "type": "enumeration",
       "enum": [
@@ -77,6 +69,13 @@
       "via": "projects",
       "collection": "technology",
       "dominant": true
+    },
+    "company": {
+      "via": "projects",
+      "model": "company"
+    },
+    "external_client_companies": {
+      "type": "text"
     }
   }
 }

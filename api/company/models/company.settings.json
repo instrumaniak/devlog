@@ -8,7 +8,7 @@
   "options": {
     "increments": true,
     "timestamps": true,
-    "draftAndPublish": true
+    "draftAndPublish": false
   },
   "pluginOptions": {},
   "attributes": {
@@ -43,19 +43,19 @@
       "required": false,
       "pluginOptions": {}
     },
-    "projects": {
-      "via": "client_companies",
-      "collection": "project"
-    },
-    "is_direct_employer": {
-      "type": "boolean",
-      "required": true
-    },
     "employment_start_date": {
       "type": "date"
     },
     "employment_end_date": {
       "type": "date"
+    },
+    "projects": {
+      "via": "company",
+      "collection": "project"
+    },
+    "is_remote_job": {
+      "type": "boolean",
+      "default": false
     }
   }
 }
